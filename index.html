@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lession 3</title>
+</head>
+<style>
+    .similarity_shop {
+        display: flex;
+    }
+    .item {
+        margin: 5px;
+        width: 200px;
+        height: 300px;
+        background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+    .total::after {
+        content: "$";
+    }
+    #cart {
+        overflow: scroll;
+        width: 200px;
+        height: 300px;
+    }
+</style>
+<body>
+    <h1>Lession 3</h1>
+    <div class="ex1">
+        <h2>Ex. 1 Числа от 1 до 100 с помощью цикла while</h2>
+        <button onclick="new From1To100()">Вперёд!</button>
+        <p id="ex1_answer"></p>
+    </div>
+    <div class="ex2">
+        <h2>Ex. 2 Корзина</h2>
+        <div class="similarity_shop">
+            <div class="item" onclick="Cart.AddToCart(ItemsNomenclature.Item1);">Товар 1</div>
+            <div class="item" onclick="Cart.AddToCart(ItemsNomenclature.Item2);">Товар 2</div>
+            <div class="item" onclick="Cart.AddToCart(ItemsNomenclature.Item3);"">Товар 3</div>
+            <div id="cart"></div>
+        </div>
+        <p class="total">Итог: <span id="ex2_answer">0</span> </p>
+        <button onclick="Cart.ClearCart();">Отчистить корзину</button>
+    </div>
+    <div class="ex3">
+        <h2>Ex. 3 От 0 до 9 при помощи for, не используя тело цикла.</h2>
+        <button onclick="new ForFrom0to9()">Да как на велике без рук!</button>
+        <p id="ex3_answer"></p>
+    </div>
+    <div class="ex4">
+        <h2>Ex. 4 Пирамидка</h2>
+        <button onclick="new Pyramide()">Нарисуй пирамидку</button>
+        <p id="ex4_answer"></p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
