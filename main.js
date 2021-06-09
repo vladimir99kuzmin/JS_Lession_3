@@ -2,15 +2,24 @@ class From1To100 {
     constructor() {
         this.answer = document.getElementById("ex1_answer");
         this.clearAnswer();
-        let i = 1;
+        let i = 0;
         while (i <= 100) {
-            this.writeIntoAnswer(i);
+            if (this.simpleNum(i, 2)) {
+                this.writeIntoAnswer(i);
+            }
             i++;
         }
     }
+
+    simpleNum(number, divider) {
+        if (number / 2 < divider) return true;
+        if (number % divider === 0) return false;
+        return this.simpleNum(number, divider + 1);
+    }
+
     writeIntoAnswer(value) {
         this.answer.innerHTML += value;
-        if (value < 100) {
+        if (value < 97) {
             this.answer.innerHTML += ", ";
         }
     }
@@ -19,7 +28,7 @@ class From1To100 {
     }
 
 }
-//тут будет хардкод. вообще, можно было бы сделать фабричным методом создание товара, который падал бы в корзину
+//тут будет хардкод. вообще, можно было бы сделать фабричным методом создание товара, который падал бы в корзину. в любом случае, для демонтрации сгодится!
 var ItemsNomenclature = {
     "Item1": {
         name: "Item1",
